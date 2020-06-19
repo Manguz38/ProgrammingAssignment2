@@ -138,6 +138,8 @@ makeCacheMatrix <-   function(x = numeric()){
 # set the value of the vector, get the value of the vector, set the value of the inverse and get the value of the inverse
 #in this example the m represents the future value of the matrix and and with the data
 #setinverse and getinverse we manage to calculate the inverse of the named matrix.
+#It is important to mention that we use <<- in order to set that we want to bring 
+#the respected data regardless that it is found on another environment.
 
 
 cacheSolve <- function(x, ...){
@@ -151,11 +153,11 @@ cacheSolve <- function(x, ...){
    x$setinverse(m)
    m
 }
-### Afterwords with create the function cacheSolve to check if the inverse has
+### Afterwords we create the function cacheSolve to check if the inverse has
 # been created previously or it has to calculate it. We use solve() to obtain the 
 #represented inverse of the named matrix. 
 myMatrix_object <- makeCacheMatrix(m1)
 cacheSolve(myMatrix_object)
-# Using the above example we manage to 
-
+# Using the above example we manage to justify that the work has been done correctly.
+#
 
